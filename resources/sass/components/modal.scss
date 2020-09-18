@@ -1,0 +1,57 @@
+.custom-modal {
+  display: none;
+  position: fixed;
+  min-height: 100vh;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 99999;
+
+  .custom-modal-content {
+    height: 100%;
+    width: 520px;
+    background: #fff;
+    margin-left: auto;
+
+    .custom-modal-header {
+      @include display-flexbox();
+      @include align-items(center);
+      @include justify-content(space-between);
+      border-bottom: 2px solid #f0f0f0;
+      height: 60px;
+
+      h3 {
+        padding-left: 0.75rem;
+      }
+    }
+
+    .custom-modal-body {
+      height: 88%;
+      padding: 0.75rem;
+      padding-bottom: 120px;
+      overflow: auto;
+    }
+  }
+
+  .footer-modal {
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    width: 520px;
+    background: #fff;
+    padding: 1rem 2rem 3rem 0;
+  }
+
+  &.show {
+    display: block;
+  }
+
+  &.center .custom-modal-content {
+    height: 50vh;
+    width: 520px;
+    margin: 0 auto;
+    margin-top: 25vh;
+}
+}

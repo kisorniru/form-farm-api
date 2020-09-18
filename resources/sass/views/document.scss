@@ -1,0 +1,132 @@
+.block-title {
+  text-align: center;
+  border-top: 2px solid #e8e7e8;
+  border-bottom: 2px solid #e8e7e8;
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 2.5rem;
+  padding: 0.75rem 0;
+  margin-bottom: 0;
+}
+
+.templates-selector {
+  border-right: 2px solid #e8e7e8;
+
+  h2 {
+    font-size: 1.2rem;
+    line-height: 2.5rem;
+    text-transform: uppercase;
+    border-bottom: 2px solid #e8e7e8;
+    margin-bottom: 2rem;
+  }
+
+  .list {
+    @include display-flexbox();
+    @include flex-direction(column);
+    padding: 0 1rem;
+
+    .template {
+      @include display-flexbox();
+      @include align-items(center);
+      margin-bottom: 1.2rem;
+      border: 2px solid #c8e1f6;
+      background: #eaf0f5;
+      padding: 1rem;
+      cursor: pointer;
+
+      .circle {
+        display: block;
+        width: 48px !important;
+        height: 48px;
+        margin-right: 1rem;
+        border-radius: 50%;
+        background: #7d7d7d;
+        color: #e7e7e7;
+        text-align: center;
+        line-height: 1.2;
+        padding: 1rem 0;
+      }
+
+      .content {
+        flex: 2;
+
+        span {
+          font-size: 1rem;
+          font-weight: 600;
+        }
+
+        p {
+          font-size: 0.8rem;
+          font-weight: 400;
+        }
+      }
+
+      &.active {
+        border: 2px solid #1d9aff;
+        background: #ffffff;
+      }
+
+      &.inactive {
+        border: 2px solid #e4e4e4;
+        background: #fafafa;
+        cursor: default;
+      }
+    }
+  }
+}
+
+.template-icon {
+  margin-right: 8px;
+}
+
+.block-title-divider {
+  border-bottom: 2px solid #e8e7e8;
+  margin-top: 1rem;
+}
+
+.document-container {
+  .fields-container {
+    border-right: 2px solid #e8e7e8;
+  }
+
+  .fields-group-title {
+    padding: 1rem 0;
+    border-bottom: 2px solid #e8e7e8;
+  }
+
+  .field-preview-box {
+    position: relative;
+
+    .edit-icon {
+      position: absolute;
+      display: block;
+      right: 32px;
+      top: 0;
+      z-index: 2;
+      cursor: pointer;
+
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+}
+
+
+.customer-header-preview,
+.customer-footer-preview {
+  @include display-flexbox(auto);
+  @include justify-content(center);
+  @include align-items(center);
+  background: #F5F5F5;
+  border: 2px solid #ECEEEF;
+  margin: 40px auto;
+  padding: 16px;
+}
+
+.document-container .available-fields {
+  .fields-group-title {
+    margin-top: 0;
+  }
+}

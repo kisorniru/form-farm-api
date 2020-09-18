@@ -1,0 +1,24 @@
+.auth {
+  @include display-flexbox();
+  @include justify-content(center);
+  @include align-items(center);
+  height: 100%;
+
+  .card {
+    border: none;
+    border-radius: 0;
+    box-shadow: 0 0 5px 1px #e8e8e8;
+
+    .card-header {
+      border: none;
+      background: none;
+      padding-top: 50px;
+      text-align: center;
+
+      h1 {
+        font-weight: 700;
+        font-size: 2rem;
+      }
+    }
+  }
+}

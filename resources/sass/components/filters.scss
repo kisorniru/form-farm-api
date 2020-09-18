@@ -1,0 +1,27 @@
+.filters {
+  .card {
+    border: 2px solid #f0f0f0;
+    border-radius: 0;
+
+    .card-header {
+      @include display-flexbox();
+      @include justify-content(space-between);
+      @include align-items(center);
+      background: none;
+      border: none;
+
+      .input-search {
+        min-width: 25%;
+      }
+
+      .btn-link {
+        .feather-chevron-down {
+          width: 18px;
+          height: 18px;
+          color: $black;
+          margin-left: 0.5rem;
+        }
+      }
+    }
+  }
+}

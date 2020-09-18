@@ -1,0 +1,62 @@
+[
+  {
+    "key": "calculation",
+    "value": "Calculation field"
+  },
+  {
+    "key": "text_field",
+    "value": "Single Line Text"
+  },
+  {
+    "key": "text_password",
+    "value": "Password"
+  },
+  {
+    "key": "text_number",
+    "value": "Number"
+  },
+  {
+    "key": "text_email",
+    "value": "Email"
+  },
+  {
+    "key": "text_tel",
+    "value": "Tel"
+  },
+  {
+    "key": "text_area",
+    "value": "Text area"
+  },
+  {
+    "key": "multiple_select",
+    "value": "Multiple select"
+  },
+  {
+    "key": "radio",
+    "value": "Radio"
+  },
+  {
+    "key": "date",
+    "value": "Date"
+  },
+  {
+    "key": "signature",
+    "value": "Signature"
+  },
+  {
+    "key": "location",
+    "value": "Location"
+  },
+  {
+    "key": "dropdown",
+    "value": "Dropdown"
+  },
+  {
+    "key": "info",
+    "value": "Information"
+  },
+  {
+    "key": "ticket_id",
+    "value": "Ticket Id"
+  }
+]

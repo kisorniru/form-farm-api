@@ -1,0 +1,25 @@
+.pagination {
+  border: 2px solid #f0f0f0;
+  border-radius: 0;
+  padding: 1rem 0;
+
+  .page-item {
+    .page-link {
+      background: none;
+      border: none;
+
+      &:hover {
+        text-decoration: underline;
+        background: none;
+        border: none;
+      }
+    }
+
+    &.active {
+      .page-link {
+        background: #f0f0f0;
+        color: #000;
+      }
+    }
+  }
+}

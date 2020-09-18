@@ -1,0 +1,175 @@
+.template-container {
+  height: 100px;
+  .fields-container {
+    border-right: 2px solid #e8e7e8;
+  }
+
+  .tabs-container {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    .tab-content {
+      background: #f4f8fa;
+      height: 100%;
+    }
+  }
+}
+
+
+.templates-list,
+.groups-list {
+  @include display-flexbox();
+  @include flex-direction(row);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    color: #6cb2eb;
+
+    &::after {
+      content: ',';
+      margin-right: 2px;
+    }
+
+    &:last-of-type {
+      &::after {
+        content: none;
+      }
+    }
+
+    &.active {
+      color: #343a40;
+    }
+  }
+}
+
+
+.fields-pdf {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, 48%);
+  padding-top: 10px;
+
+  .field-pdf {
+    @include display-flexbox(auto);
+    @include justify-content(space-between);
+    @include prefix(transition, all .2s ease, webkit moz spec);
+    border: 2px solid #E8E7E8;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+    border-radius: 5px;
+    padding: 0.6rem;
+    cursor: pointer;
+
+    .field-name {
+      font-size: 16px;
+      color: #000000;
+      letter-spacing: 0.1px;
+      line-height: 24px;
+      overflow: hidden;
+      margin: 0;
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+      margin-left: 10px;
+    }
+
+    .remove-field {
+      display: none;
+    }
+
+    &:hover {
+      border: 2px solid #b5c46a;
+      box-shadow: -2px -2px 6px rgba(199, 215, 117, 0.5),
+        2px 2px 6px rgba(199, 215, 117, 0.5);
+      background-color: #c7d775;
+
+      span {
+        display: none;
+
+        &.remove-field {
+          display: block;
+        }
+      }
+    }
+
+    &.disabled {
+      opacity: 0.5;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.annotationLayer .textWidgetAnnotation input,
+.annotationLayer .textWidgetAnnotation textarea,
+.annotationLayer .choiceWidgetAnnotation select,
+.annotationLayer .buttonWidgetAnnotation.checkBox input,
+.annotationLayer .buttonWidgetAnnotation.radioButton input {
+  background-color: rgba(0, 54, 255, 0);
+  border: 1px solid #c7d775;
+  border-top-color: transparent;
+}
+
+.annotationLayer .textWidgetAnnotation input:hover,
+.annotationLayer .textWidgetAnnotation textarea:hover,
+.annotationLayer .choiceWidgetAnnotation select:hover,
+.annotationLayer .buttonWidgetAnnotation.checkBox input:hover,
+.annotationLayer .buttonWidgetAnnotation.radioButton input:hover {
+  background-color: rgba(222, 232, 171, 1);
+  border: 1px solid #c7d775 !important;
+}
+
+.field-preview-box {
+  position: relative;
+
+  .edit-icon {
+    position: absolute;
+    display: block;
+    right: 32px;
+    top: 0;
+    z-index: 2;
+    cursor: pointer;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  .drag-icon {
+    position: absolute;
+    display: block;
+    right: 8px;
+    top: 0;
+    z-index: 2;
+    cursor: pointer;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+
+.available-fields {
+  width: 30vw;
+  height: calc(100vh - 220px);
+  background-color: #fff;
+  transition: all 0.5s ease;
+
+  .fields-pdf {
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  @media screen and (max-width: 768px) {
+    position: unset;
+    width: auto;
+    height: auto;
+  }
+}

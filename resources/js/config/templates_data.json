@@ -1,0 +1,30 @@
+{
+  "info": {
+    "name": "",
+    "description": "",
+    "message": "",
+    "type": "content",
+    "content": ""
+  },
+  "breadcrumbs": [
+    {
+      "url": "/dashboard/settings/templates",
+      "name": "Template library"
+    },
+    {
+      "url": "/dashboard/settings/templates/new",
+      "name": "New Template",
+      "active": true
+    }
+  ],
+  "types": [
+    {
+      "id": "content",
+      "label": "Create from scratch"
+    },
+    {
+      "id": "pdf",
+      "label": "Create from existing PDF"
+    }
+  ]
+}

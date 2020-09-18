@@ -1,0 +1,197 @@
+/**
+ * Prefix mixin for generating vendor prefixes.
+ * Based on https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/addons/_prefixer.scss
+ *
+ * Accepts:
+ * - $property: {String} css property
+ * - $value: {String} value for the css property
+ * - $prefixes: {list} list of browsers support
+ *
+ * Usage:
+ * .element {
+ *   @include prefix(transform, scale(1), ms webkit spec);
+ * }
+ *
+ */
+ @mixin prefix($property, $value, $prefixes) {
+  @each $prefix in $prefixes {
+    @if $prefix == webkit {
+      -webkit-#{$property}: $value;
+    }
+
+    @else if $prefix == moz {
+      -moz-#{$property}: $value;
+    }
+
+    @else if $prefix == ms {
+      -ms-#{$property}: $value;
+    }
+
+    @else if $prefix == o {
+      -o-#{$property}: $value;
+    }
+
+    @else if $prefix == spec {
+      #{$property}: $value;
+    }
+
+    @else {
+      @warn "Unrecognized prefix: #{$prefix}";
+    }
+  }
+}
+
+/**
+ * Set a default flexbox config
+ *
+ * Usage:
+ * .selector {
+ *   @include display-flexbox ()
+ * }
+ */
+@mixin display-flexbox($width: 100%) {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: $width; // necessary for ie10
+}
+
+/**
+ * flex-wrap
+ *
+ * Usage:
+ * .selector {
+ *   @include flex-wrap (wrap)
+ * }
+ */
+@mixin flex-wrap($value: nowrap) {
+  @include prefix(flex-wrap, $value, webkit moz ms spec);
+}
+
+/**
+ * flex-direction
+ *
+ * Usage:
+ * .selector {
+ *   @include flex-direction (column)
+ * }
+ */
+@mixin flex-direction($value) {
+  @include prefix(flex-direction, $value, webkit moz ms spec);
+}
+
+/**
+ * align-items
+ *
+ * Usage:
+ * .selector {
+ *   @include align-items (center)
+ * }
+ */
+@mixin align-items($value: stretch) {
+  $alt-value: $value;
+
+  @if $value == "flex-start" {
+    $alt-value: start;
+  }
+
+  @else if $value == "flex-end" {
+    $alt-value: end;
+  }
+
+  // sass-lint:disable no-misspelled-properties
+  -ms-flex-align: $alt-value;
+
+  @include prefix(align-items, $value, webkit moz ms o spec);
+}
+
+/**
+ * flex
+ *
+ * Usage:
+ * .selector {
+ *   @include flex (<'flex-grow'> <'flex-shrink'>? || <'flex-basis'>)
+ * }
+ */
+@mixin flex($value: 0 1 auto) {
+  @include prefix(flex, $value, webkit moz ms spec);
+}
+
+/**
+ * flex-basis
+ *
+ * Usage:
+ * .selector {
+ *   @include flex-basis (center)
+ * }
+ */
+@mixin flex-basis($width: auto) {
+  // sass-lint:disable no-misspelled-properties
+  -ms-flex-preferred-size: $width;
+
+  @include prefix(flex-basis, $width, webkit moz spec);
+}
+
+/**
+ * align-self
+ *
+ * Usage:
+ * .selector {
+ *   @include align-self (center)
+ * }
+ */
+@mixin align-self($align: auto) {
+  // sass-lint:disable no-misspelled-properties
+  -ms-flex-item-align: $align;
+
+  @include prefix(align-self, $align, webkit spec);
+}
+
+/**
+ * align-content
+ *
+ * Usage:
+ * .selector {
+ *   @include align-content (center)
+ * }
+ */
+@mixin align-content($align: center) {
+  @include prefix(align-content, $align, webkit ms spec);
+}
+
+/**
+ * justify-content
+ *
+ * Usage:
+ * .selector {
+ *   @include justify-content (center)
+ * }
+ */
+@mixin justify-content($justify: flex-start) {
+  @include prefix(justify-content, $justify, webkit ms spec);
+}
+
+/*
+ * Placeholder
+ * Usage:
+ * .selector {
+ *   @include placeholder { color: white; }
+ * }
+ */
+@mixin placeholder {
+  ::-webkit-input-placeholder {
+    @content;
+  }
+
+  ::-moz-placeholder {
+    @content;
+  }
+
+  :-moz-placeholder {
+    @content;
+  }
+
+  :-ms-input-placeholder {
+    @content;
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "info": {
+    "name": "",
+    "content": "",
+    "type": "content",
+    "use_template": false
+  },
+  "breadcrumbs": [
+    {
+      "url": "/dashboard/documents",
+      "name": "Documents"
+    },
+    {
+      "url": "/dashboard/documents/new",
+      "name": "New Document",
+      "active": true
+    }
+  ],
+  "options": [
+    {
+      "id": "true",
+      "label": "Create from existing template"
+    },
+    {
+      "id": "false",
+      "label": "Create from scratch"
+    }
+  ],
+  "types": [
+    {
+      "id": "content",
+      "label": "Create from scratch"
+    },
+    {
+      "id": "pdf",
+      "label": "Create from existing PDF"
+    }
+  ]
+}

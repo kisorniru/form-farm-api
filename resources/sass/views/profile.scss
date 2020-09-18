@@ -1,0 +1,13 @@
+.list-group-item {
+  border: none;
+  padding: 1.25rem 1.25rem;
+  border-radius: 0 !important;
+
+  &.active {
+    background: none;
+
+    a {
+      color: #000;
+    }
+  }
+}

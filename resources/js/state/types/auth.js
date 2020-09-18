@@ -1,0 +1,5 @@
+export const SET_TOKEN = 'SET_TOKEN'
+export const SET_AUTH = 'SET_AUTH'
+export const LOGOUT = 'LOGOUT'
+export const SET_AUTH_ROLE = 'SET_AUTH_ROLE'
+export const TOGGLE_PROFILE_MODAL = 'TOGGLE_PROFILE_MODAL'

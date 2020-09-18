@@ -1,0 +1,56 @@
+@import "variables";
+@import "./common/mixins";
+
+body {
+  background: $body-bg;
+  font-family: $font-family-sans-serif;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  margin: 2rem;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+
+  th,
+  td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+    text-align: inherit;
+  }
+
+  thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+  }
+}
+
+@media print {
+  body {
+    margin: 1cm;
+  }
+
+  .container {
+    width: 90%;
+  }
+
+  ul,
+  img,
+  table {
+    page-break-inside: always;
+  }
+}

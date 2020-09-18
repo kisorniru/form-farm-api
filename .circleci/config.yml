@@ -1,0 +1,47 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/php:7.2-node-browsers
+      - image: circleci/mysql:5.7
+        environment:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: formfarm
+    working_directory: ~/repo
+    steps:
+      - checkout
+
+      - run: sudo apt update && sudo apt install -y default-mysql-client --no-install-recommends && sudo apt-get install libpng-dev
+      - run: sudo docker-php-ext-install pdo_mysql gd
+      - run:
+          name: Disable Xdebug
+          command: sudo rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+      - restore_cache:
+          keys:
+          - v1-php-dependencies-{{ checksum "composer.lock" }}
+          - v1-php-dependencies-
+
+      # setting up environment.
+      - run: cp .env.example .env
+
+      - run: composer install -n --prefer-dist
+      - save_cache:
+          paths:
+            - ./vendor
+          key: v1-php-dependencies-{{ checksum "composer.lock" }}
+
+      # set encryption key and surv client app key.
+      - run: php artisan key:generate
+      - run: php artisan migrate --force
+      - run: php artisan db:seed
+
+      # run the server
+      - run:
+          command: php artisan serve
+          background: true
+
+      # run tests!
+      - run: vendor/bin/phpunit -d memory_limit=512M --verbose
+      - store_artifacts:
+          path: ./storage/logs
+          destination: app-logs
