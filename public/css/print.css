@@ -1,1 +1,145 @@
-body{background:#fff;font-family:Nunito Sans,sans-serif;font-size:.9rem;line-height:1.6;margin:2rem}.container{width:80%;margin:auto}h1{text-align:center;margin-bottom:2rem}.table{border-collapse:collapse;width:100%;margin-bottom:1rem;color:#212529}.table td,.table th{padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6;text-align:inherit}.table thead th{vertical-align:bottom;border-bottom:2px solid #dee2e6}@media print{body{margin:1cm}.container{width:90%}img,table,ul{page-break-inside:always}}
+/**
+ * Prefix mixin for generating vendor prefixes.
+ * Based on https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/addons/_prefixer.scss
+ *
+ * Accepts:
+ * - $property: {String} css property
+ * - $value: {String} value for the css property
+ * - $prefixes: {list} list of browsers support
+ *
+ * Usage:
+ * .element {
+ *   @include prefix(transform, scale(1), ms webkit spec);
+ * }
+ *
+ */
+/**
+ * Set a default flexbox config
+ *
+ * Usage:
+ * .selector {
+ *   @include display-flexbox ()
+ * }
+ */
+/**
+ * flex-wrap
+ *
+ * Usage:
+ * .selector {
+ *   @include flex-wrap (wrap)
+ * }
+ */
+/**
+ * flex-direction
+ *
+ * Usage:
+ * .selector {
+ *   @include flex-direction (column)
+ * }
+ */
+/**
+ * align-items
+ *
+ * Usage:
+ * .selector {
+ *   @include align-items (center)
+ * }
+ */
+/**
+ * flex
+ *
+ * Usage:
+ * .selector {
+ *   @include flex (<'flex-grow'> <'flex-shrink'>? || <'flex-basis'>)
+ * }
+ */
+/**
+ * flex-basis
+ *
+ * Usage:
+ * .selector {
+ *   @include flex-basis (center)
+ * }
+ */
+/**
+ * align-self
+ *
+ * Usage:
+ * .selector {
+ *   @include align-self (center)
+ * }
+ */
+/**
+ * align-content
+ *
+ * Usage:
+ * .selector {
+ *   @include align-content (center)
+ * }
+ */
+/**
+ * justify-content
+ *
+ * Usage:
+ * .selector {
+ *   @include justify-content (center)
+ * }
+ */
+/*
+ * Placeholder
+ * Usage:
+ * .selector {
+ *   @include placeholder { color: white; }
+ * }
+ */
+body {
+  background: #ffff;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 2rem;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+}
+.table th,
+.table td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+  text-align: inherit;
+}
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
+}
+
+@media print {
+  body {
+    margin: 1cm;
+  }
+
+  .container {
+    width: 90%;
+  }
+
+  ul,
+img,
+table {
+    page-break-inside: always;
+  }
+}

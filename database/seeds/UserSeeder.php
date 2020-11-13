@@ -27,6 +27,17 @@ class UserSeeder extends Seeder
         'group' => 1,
       ],
       [
+        'name' => 'José Galdámez',
+        'first_name' => 'José',
+        'last_name' => 'Galdámez',
+        'password' => '$2y$10$l29kqRkmCT6eCbF3SO1s3uc5pcUmRX7DZ26.Vo2KSC/eqqcJjl4.O', // abcd1234
+        'company' => 'Kettle, LLC',
+        'email' => 'test@test.com',
+        'phone_number' => '(234) 235-2350',
+        'is_admin' => 1,
+        'group' => 1,
+      ],
+      [
         'name' => 'Drew Witmer',
         'first_name' => 'Drew',
         'last_name' => 'Witmer',

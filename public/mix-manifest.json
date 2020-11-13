@@ -1,8 +1,7 @@
 {
-    "/css/plugins.css": "/css/plugins.css",
-    "/css/print.css": "/css/print.css",
-    "/css/app.css": "/css/app.css",
     "/js/app.js": "/js/app.js",
     "/js/plugins.js": "/js/plugins.js",
-    "/vendors~pdfjsWorker.js": "/vendors~pdfjsWorker.js"
+    "/css/plugins.css": "/css/plugins.css",
+    "/css/print.css": "/css/print.css",
+    "/css/app.css": "/css/app.css"
 }
