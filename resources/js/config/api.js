@@ -5,9 +5,9 @@ import Axios from 'axios'
  * Axios available methods
  *
  */
-export const GET    = 'GET'
-export const POST   = 'POST'
-export const PUT    = 'PUT'
+export const GET = 'GET'
+export const POST = 'POST'
+export const PUT = 'PUT'
 export const DELETE = 'DELETE'
 
 
@@ -46,8 +46,8 @@ const headers = {
  * @var axios
  */
 export const axios = Axios.create({
-    headers,
-    baseURL: `${baseURL}/api`
+  headers,
+  baseURL: `${baseURL}/api`
 })
 
 /**
