@@ -27,6 +27,17 @@ class UserSeeder extends Seeder
         'group' => 1,
       ],
       [
+        'name' => 'Noor-A-Alam Siddique',
+        'first_name' => 'Noor-A-Alam',
+        'last_name' => 'Siddique',
+        'password' => '$2y$10$l29kqRkmCT6eCbF3SO1s3uc5pcUmRX7DZ26.Vo2KSC/eqqcJjl4.O', // abcd1234
+        'company' => 'bGlobal, LLC',
+        'email' => 'kisorniru@gmail.com',
+        'phone_number' => '(880) 1725-156188',
+        'is_admin' => 1,
+        'group' => 1,
+      ],
+      [
         'name' => 'Drew Witmer',
         'first_name' => 'Drew',
         'last_name' => 'Witmer',

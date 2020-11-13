@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { NotificationManager } from 'react-notifications'
 import { getSetupIntent, getSubscriptionInfo, addPaymentMethod, removePaymentMethod, subscribeToPlan } from '../../api/customers'
 import { getPlans } from '../../api/plans'
-import dateFormat from 'dateFormat'
+import dateFormat from 'dateformat'
 import CardIcon from '../../Icons/CardIcon'
 
 class Billing extends React.Component {

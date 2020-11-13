@@ -5,9 +5,9 @@ import Axios from 'axios'
  * Axios available methods
  *
  */
-export const GET    = 'GET'
-export const POST   = 'POST'
-export const PUT    = 'PUT'
+export const GET = 'GET'
+export const POST = 'POST'
+export const PUT = 'PUT'
 export const DELETE = 'DELETE'
 
 
@@ -22,7 +22,8 @@ const token = localStorage.getItem('token')
  * @var baseURL
  */
 // export const baseURL = 'http://form-farm.test' // Development
-export const baseURL = 'https://formfarmapi.amp.build' // Production
+// export const baseURL = 'https://formfarmapi.amp.build' // Production
+export const baseURL = 'http://127.0.0.1:8000/' // Local
 
 /**
  * String with the environment NODE API URL
@@ -45,8 +46,8 @@ const headers = {
  * @var axios
  */
 export const axios = Axios.create({
-    headers,
-    baseURL: `${baseURL}/api`
+  headers,
+  baseURL: `${baseURL}/api`
 })
 
 /**
