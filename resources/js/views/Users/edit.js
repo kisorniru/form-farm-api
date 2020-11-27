@@ -30,6 +30,8 @@ class EditUser extends React.Component {
   }
 
   componentDidMount() {
+
+
     getGroups({ limit: 1000 })
       .then(response => {
         const groups = response.data.map(group => {
@@ -73,6 +75,8 @@ class EditUser extends React.Component {
     event.preventDefault()
     const { user } = this.state
     const { customer, authUser } = this.props
+
+    console.log('authUser=', authUser)
 
     if (customer) {
       user.customer = customer.id
@@ -122,6 +126,7 @@ class EditUser extends React.Component {
 
   render() {
     const { user, groups, roles, errors } = this.state
+    const { authUser } = this.props
 
     return (
       <form className="container" onSubmit={this.onSubmit} autoComplete="off">
@@ -186,20 +191,23 @@ class EditUser extends React.Component {
         </div>
 
 
-          <div className="row">
-            <div className="col">
-              <Field
-                type="password"
-                parentClass="input-user"
-                showLabel={true}
-                name="password"
-                label="Password"
-                placeholder="Password"
-                error={errors.password}
-                onChange={this.changeField}
-              />
+          {
+            authUser.admin &&
+            <div className="row">
+              <div className="col">
+                <Field
+                  type="password"
+                  parentClass="input-user"
+                  showLabel={true}
+                  name="password"
+                  label="Password"
+                  placeholder="Password"
+                  error={errors.password}
+                  onChange={this.changeField}
+                />
+              </div>
             </div>
-          </div>
+          }
         
 
         <div className="row">
