@@ -165,19 +165,9 @@
                     @endif
                   </td>
                   @switch($field->type)
-                    @case('signature')
-                      @if (!empty($field->pivot->value))
-                        @php
-                          try {
-                            $path = preg_replace('/^public\//i', '', $field->pivot->value);
-                            $url = asset('storage/' . $path);
-                          } catch (\Exception $e) {
-                            $url = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=";
-                          }
-                        @endphp
-                        <td class="info" vertical-align="top"><img src="{{ $url }}" alt="{{ $field->name }}" width="240"></td>
-                      @endif
-                    @break
+                  @case('signature')
+
+                  @break
                     @case('date')
                       @php
                         if (is_numeric($field->pivot->value)) {
@@ -241,6 +231,61 @@
       </table>
     @endforeach
   </div>
+
+
+
+  <table class="fields-table">
+      <tbody>
+        @php
+          $counter = 0;
+        @endphp
+        @foreach ($normal as $key => $field)
+          @php
+            if ($counter == 3) {
+              $counter = 1;
+            } else {
+              $counter = $counter + 1;
+            }
+          @endphp
+          @if ($counter == 1)
+            <tr>
+          @endif
+
+          <td class="field-column">
+            <table class="field">
+              <tbody>
+                <tr>
+                  
+                  @switch($field->type)
+                    @case('signature')
+                      @if (!empty($field->pivot->value))
+                        @php
+                          try {
+                            $path = preg_replace('/^public\//i', '', $field->pivot->value);
+                            $url = asset('storage/' . $path);
+                          } catch (\Exception $e) {
+                            $url = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=";
+                          }
+                        @endphp
+                        <td class="info" vertical-align="top"><img src="{{ $url }}" alt="{{ $field->name }}" width="240"></td>
+                      @endif
+                    @break
+                    
+                    @default
+
+                  @endswitch
+                </tr>
+              </tbody>
+            </table>
+          </td>
+
+          @if ($counter == 3)
+            </tr>
+          @endif
+        @endforeach
+      </tbody>
+    </table>
+
 
   <footer class="footer-icon">
     <script type="text/php">
