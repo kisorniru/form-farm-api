@@ -35008,10 +35008,10 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/html/laravel-react/form-builder.localdev/resources/js/plugins.js */"./resources/js/plugins.js");
-__webpack_require__(/*! /var/www/html/laravel-react/form-builder.localdev/resources/sass/plugins.scss */"./resources/sass/plugins.scss");
-__webpack_require__(/*! /var/www/html/laravel-react/form-builder.localdev/resources/sass/print.scss */"./resources/sass/print.scss");
-module.exports = __webpack_require__(/*! /var/www/html/laravel-react/form-builder.localdev/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /var/www/html/form-farm-api.local/resources/js/plugins.js */"./resources/js/plugins.js");
+__webpack_require__(/*! /var/www/html/form-farm-api.local/resources/sass/plugins.scss */"./resources/sass/plugins.scss");
+__webpack_require__(/*! /var/www/html/form-farm-api.local/resources/sass/print.scss */"./resources/sass/print.scss");
+module.exports = __webpack_require__(/*! /var/www/html/form-farm-api.local/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

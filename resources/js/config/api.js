@@ -23,6 +23,8 @@ const token = localStorage.getItem('token')
  */
 export const baseURL = 'http://form-builder.localdev' // Development
 // export const baseURL = 'https://formfarmapi.amp.build' // Production
+// export const baseURL = 'http://127.0.0.1:8000' // Local
+// export const baseURL = 'https://form-farm-api.local' // Local
 
 /**
  * String with the environment NODE API URL
@@ -30,6 +32,8 @@ export const baseURL = 'http://form-builder.localdev' // Development
  */
 // export const baseNodeURL = `https://formfarmpdf.amp.build`
 export const baseNodeURL = `http://localhost:3000`
+// export const baseNodeURL = `https://form-farm-api.local`
+// export const baseNodeURL = `http://127.0.0.1:8000`
 
 /**
  * default header settings
