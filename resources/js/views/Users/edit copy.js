@@ -80,6 +80,8 @@ class EditUser extends React.Component {
       user.customer = authUser.customer.id
     }
 
+    console.log('user=', user)
+
     let promise = user.id ? updateUser(user.id, user) : addUser(user)
     promise
       .then(response => {

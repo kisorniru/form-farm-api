@@ -192,7 +192,6 @@ class UserController extends Controller
       'customer',
       'image',
       'new_image',
-      'password',
       'old_password',
       'new_password',
       'password_repeat',
